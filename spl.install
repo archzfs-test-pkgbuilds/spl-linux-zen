@@ -1,0 +1,15 @@
+post_install() {
+    run_depmod
+}
+
+post_remove() {
+    run_depmod
+}
+
+post_upgrade() {
+    run_depmod
+}
+
+run_depmod() {
+    depmod -a 4.14.8-1-zen
+}
