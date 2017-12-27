@@ -24,7 +24,7 @@ arch=("x86_64")
 url="http://zfsonlinux.org/"
 source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-0.7.5/spl-0.7.5.tar.gz"
         "0001-Linux-4.15-compat-timer-updates.patch")
-sha256sums=("SKIP"
+sha256sums=("c4845d9a6123397c53ee003ed1712f2996a50ac2a9a30d1490280771484d08a6"
             "3c882c05ef76200e60713541ecfcac8b17fd043e85c35ebb453e9a47bfb13278")
 license=("GPL")
 depends=("spl-utils-common=0.7.5" "kmod" "linux-zen=4.14.8-1")
