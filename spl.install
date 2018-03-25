@@ -11,5 +11,5 @@ post_upgrade() {
 }
 
 run_depmod() {
-    depmod -a 4.15.11-1-zen
+    depmod -a 4.15.12-1-zen
 }
