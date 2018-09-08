@@ -17,8 +17,8 @@
 #
 pkgbase="spl-linux-zen"
 pkgname=("spl-linux-zen" "spl-linux-zen-headers")
-_splver="0.7.9"
-_kernelver="4.18.5.zen1-1"
+_splver="0.7.10"
+_kernelver="4.18.6.zen1-1"
 _extramodules="${_kernelver/.zen/-zen}-zen"
 
 pkgver="${_splver}_$(echo ${_kernelver} | sed s/-/./g)"
@@ -26,16 +26,10 @@ pkgrel=1
 makedepends=("linux-zen-headers=${_kernelver}")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
-source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${_splver}/spl-${_splver}.tar.gz"
-        "upstream-eb1f893-Linux-4.18-compat-inode-timespec_timespec64.patch")
-sha256sums=("49832e446a5abce0b55ba245c9b5f94959604d44378320fdffae0233bf1e8c00"
-            "72d1b4103c0b52e0fc2b7135485e346c898289ab42f7bc1ae2748d072a360f66")
+source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${_splver}/spl-${_splver}.tar.gz")
+sha256sums=("9647e0fe9f19cd99746da3cc48b8de8903a66dacdccc82b45dbbb516606f4ff8")
 license=("GPL")
 depends=("spl-utils-common=${_splver}" "kmod" "linux-zen=${_kernelver}")
-prepare() {
-    cd "${srcdir}/spl-${_splver}"
-    patch -Np1 -i ${srcdir}/upstream-eb1f893-Linux-4.18-compat-inode-timespec_timespec64.patch
-}
 
 build() {
     cd "${srcdir}/spl-${_splver}"
